@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import kotlinx.android.synthetic.main.activity_restaurant.*
 import kotlinx.android.synthetic.main.fragment_settings.*
 
 // TODO: Rename parameter arguments, choose names that match
@@ -29,6 +30,10 @@ class SettingsFragment : Fragment() {
 
         accedi.setOnClickListener {
             openLogin()
+        }
+
+        termini.setOnClickListener {
+            openTermini()
         }
 
     }
@@ -60,6 +65,11 @@ class SettingsFragment : Fragment() {
 
     fun openLogin() {
         val intent = Intent(activity, LoginActivity::class.java)
+        startActivity(intent)
+    }
+
+    fun openTermini() {
+        val intent = Intent(activity, Termini_CondizioniActivity::class.java)
         startActivity(intent)
     }
 

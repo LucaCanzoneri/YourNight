@@ -1,9 +1,12 @@
 package com.example.yournight.home
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.yournight.DetailPage
 import com.example.yournight.ElementList
 import com.example.yournight.R
 import com.google.firebase.firestore.ktx.firestore
@@ -32,7 +35,7 @@ class RestaurantActivity : AppCompatActivity() {
                 for (document in result) {
 
                     Log.d("RISTORANTI", "Successo")
-                    val restaurant = ElementList(document.data["nome"].toString())
+                    val restaurant = ElementList(document.data["nome"].toString(), document.data["valutazione"].toString(), document.data["indirizzo"].toString(), document.data["immagine"].toString(), document.data["telefono"].toString())
                     recipes!!.add(restaurant)
 
                 }
@@ -44,7 +47,6 @@ class RestaurantActivity : AppCompatActivity() {
                 val layoutManager =
                     LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
                 recycleView.layoutManager = layoutManager
-
                 recycleView.adapter = adapter
 
             }
