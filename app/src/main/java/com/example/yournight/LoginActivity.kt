@@ -1,12 +1,11 @@
 package com.example.yournight
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.auth.FirebaseAuth
-import kotlinx.android.synthetic.main.activity_create_account.*
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() {
@@ -33,6 +32,9 @@ class LoginActivity : AppCompatActivity() {
                                 // Sign in success, update UI with the signed-in user's information
                                 Log.d("succTag", "signInWithEmail:success")
                                 val user = auth.currentUser
+                                val intent =
+                                    Intent(this@LoginActivity, SettingsFragment::class.java)
+                                    startActivity(intent)
                             } else {
                                 // If sign in fails, display a message to the user.
                                 Log.w("failTag", "signInWithEmail:failure", task.exception)

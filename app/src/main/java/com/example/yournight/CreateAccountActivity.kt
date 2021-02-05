@@ -55,6 +55,7 @@ class CreateAccountActivity : AppCompatActivity() {
                                     .addOnSuccessListener { documentReference ->
                                         Log.d("testFireStore", "DocumentSnapshot added with ID")
                                         openLoginActivity()
+                                        finish()
                                     }
                                     .addOnFailureListener { e ->
                                         Log.w("testFireStore", "Error adding document", e)

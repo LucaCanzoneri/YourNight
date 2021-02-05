@@ -6,6 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".CreateAccountActivity">
 
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:src="@drawable/logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <com.github.ybq.android.spinkit.SpinKitView
         android:id="@+id/loadingView"
         style="@style/SpinKitView.Large.FadingCircle"
@@ -26,7 +34,7 @@
         android:id="@+id/registerButton"
         android:layout_width="253dp"
         android:layout_height="77dp"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="40dp"
         android:background="@color/colorPrimary"
         android:text="Registrati"
         android:textColor="#fff"
@@ -39,16 +47,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="15dp"
         android:hint="Name"
         app:endIconMode="clear_text"
         app:errorEnabled="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-
+        app:layout_constraintTop_toBottomOf="@+id/imageView7">
 
 
         <com.google.android.material.textfield.TextInputEditText

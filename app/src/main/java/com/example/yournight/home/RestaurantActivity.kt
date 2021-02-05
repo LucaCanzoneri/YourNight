@@ -1,12 +1,9 @@
 package com.example.yournight.home
 
-import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.yournight.DetailPage
 import com.example.yournight.ElementList
 import com.example.yournight.R
 import com.google.firebase.firestore.ktx.firestore
@@ -37,7 +34,6 @@ class RestaurantActivity : AppCompatActivity() {
                     Log.d("RISTORANTI", "Successo")
                     val restaurant = ElementList(document.data["nome"].toString(), document.data["valutazione"].toString(), document.data["indirizzo"].toString(), document.data["immagine"].toString(), document.data["telefono"].toString())
                     recipes!!.add(restaurant)
-
                 }
 
                 //Dichiaro l'adapter
@@ -53,5 +49,8 @@ class RestaurantActivity : AppCompatActivity() {
             .addOnFailureListener { exception ->
                 Log.d("RISTORANTI", "Fail")
             }
+
+
     }
+
 }
